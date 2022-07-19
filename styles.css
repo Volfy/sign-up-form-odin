@@ -4,6 +4,11 @@
     url('assets/horizon/horizon-personaluse-webfont.woff2') format('woff2');
 
 }
+
+:root {
+    --sidebar-min-width: 300px;
+    --sidebar-width: 0.3;
+}
 html {
     width: 100%;
     height: 100%;
@@ -14,21 +19,76 @@ body {
     height: 100%;
     display: flex;
     flex-direction: row;
+    margin: 0;
+    padding: 0;
 }
 
-/* MAIN CONTENT STUFF */
+/* SIDEBAR STUFF */
+
+/* if screen is too small, logo text will wrap with no background.
+    additionally, it can overlap onto the main section */
+
+.sidebar {
+    --sidebar-actual-width: max(calc(var(--sidebar-width)*100vw), var(--sidebar-min-width));
+    background-image: url('assets/bg.png');
+    background-position-x: 60%;
+    background-position-y: 70%;
+    /* have to have really long monitor */
+    background-repeat: no-repeat;
+
+    /* limit sidebar size */
+    width: var(--sidebar-actual-width); 
+
+}
+
+.logo {
+    --text-actual-size: calc(var(--sidebar-actual-width)*0.2);
+
+    /* space out items and center */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    /* padding and keep items in sidebar */
+    box-sizing: border-box;
+    padding: max(50px, 5vw);
+    
+    height: calc(var(--text-actual-size));
+    width: 100%;
+
+    /* position it within sidebar */
+    position: relative;
+    top: 20%;
+    
+    /* add black semi-transparent bg */
+    background-color: rgba(0, 0, 0, 0.607);
+}
+
+.logo > img {
+    height: var(--text-actual-size);
+    width: auto;
+}
+
+.logo-text {
+    font-family: 'Horizon';
+    font-size: var(--text-actual-size);
+    color: white;
+}
+
+/* MAIN CONTENT STUFF 
 
 .container {
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
-    gap: 20%; /* change */
+    gap: 20%; 
 }
 
-/* FORM AREA */
+/* FORM AREA 
 
-/* issues: does not have a limit to divs per row */
+/* issues: does not have a limit to divs per row 
 
 .form-area {
     display: flex;
@@ -41,22 +101,9 @@ body {
     padding: 5px;
 }
 
-/* different line for labels */
+/* different line for labels 
 .form-area div * {
     display: block;
-}
+} */
 
-/* SIDEBAR STUFF */
 
-.sidebar {
-    background-image: url('assets/bg.png');
-}
-
-.logo-background > img {
-    width: 100px;
-    height: 100px;
-}
-
-.logo-text {
-    font-family: 'Horizon';
-}
