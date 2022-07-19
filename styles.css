@@ -23,6 +23,13 @@
     /* main stuff */
     --core-color: purple;
     --accent-color: pink;
+    --neutral-color: lightgrey;
+    --main-padding: 5%;
+    --main-max-width: 1000px;
+    --main-width-factor: 0.7;
+
+    /** signup info */
+    --signup-top: 20%;
     /** form stuff */
     --form-text-color: grey;
     --form-error-color: red;
@@ -36,6 +43,7 @@ html {
 }
 
 body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     width: 100%;
     height: 100%;
     display: flex;
@@ -94,27 +102,40 @@ body {
     color: var(--logo-text-color);
 }
 
-/* MAIN CONTENT STUFF 
+/* MAIN CONTENT STUFF */
 
 .container {
+    --inner-width: calc(min(var(--main-max-width), 100%)*var(--main-width-factor));
     display: flex;
     flex-direction: column;
     align-content: center;
-    justify-content: center;
-    gap: 20%; 
+    box-sizing: border-box;
+    padding: 0;
+    width: 100%;
+    background-color: var(--neutral-color);
 }
 
-/* FORM AREA 
+.sign-up-info {
+    width: var(--inner-width);
+    margin-top: min(var(--signup-top), 300px);
+    font-size: 1.6em;
+    font-weight: 550;
+    padding: var(--main-padding);
+}
 
-/* issues: does not have a limit to divs per row 
+
+/* FORM AREA */
+
+/* issues: does not have a limit to divs per row */
 
 .form-area {
-    display: flex;
-    flex-wrap: wrap;
-    width: 70%;
+    /* does not extend to left fully */
+    width: var(--inner-width);
+    background-color: var(--form-area-bg-color);
+    padding: var(--main-padding);
 }
 
-.form-area div {
+/* .form-area div {
     flex: 1 1 21%;
     padding: 5px;
 }
@@ -124,4 +145,10 @@ body {
     display: block;
 } */
 
+.log-in {
+    padding: var(--main-padding);
+}
 
+.italic {
+    font-style: italic;
+}
