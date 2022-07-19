@@ -28,6 +28,8 @@ body {
 
 /* FORM AREA */
 
+/* issues: does not have a limit to divs per row */
+
 .form-area {
     display: flex;
     flex-wrap: wrap;
