@@ -119,34 +119,46 @@ body {
     width: var(--inner-width);
     margin-top: min(var(--signup-top), 300px);
     font-size: 1.6em;
-    font-weight: 550;
+    font-weight: 700;
     padding: var(--main-padding);
 }
 
 
 /* FORM AREA */
 
-/* issues: does not have a limit to divs per row */
-
 .form-area {
-    /* does not extend to left fully */
-    width: var(--inner-width);
+    width: 100%;
     background-color: var(--form-area-bg-color);
     padding: var(--main-padding);
+    padding-top: 0px;
+    box-shadow: 3px 3px 6px #888;
 }
 
-/* .form-area div {
-    flex: 1 1 21%;
+#sign-up {
+    display: flex;
+    flex-wrap: wrap;
+    width: var(--inner-width);
+}
+
+#sign-up div {
+    flex: 1 1 42%;
     padding: 5px;
 }
 
-/* different line for labels 
-.form-area div * {
+#sign-up div * {
     display: block;
-} */
+} 
 
-.log-in {
+.form-area > p {
+    font-size: 1.4em;
+    font-weight: 700;
+}
+
+/* Post-FORM area */
+
+.post-form {
     padding: var(--main-padding);
+    width: var(--inner-width);
 }
 
 .italic {

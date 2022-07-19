@@ -8,13 +8,16 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <div class="sidebar">
         <div class="logo">
             <img alt="AETH Logo" src="assets/mon_1.png">
             <div class="logo-text">AETH</div>
         </div>
     </div>
+
     <div class="container">
+
         <div class="sign-up-info">
             <p>
                 This is not a real online service! You know you need something like this in your life to help you
@@ -22,12 +25,11 @@
             Sign up <span class="italic">now</span> to get started.</p>
             <p>You <span class="italic">know</span> you want to.</p>
         </div>
-        <!--- *******remove this
-            <form action="https://httpbin.org/post" method="POST">
-                --->
-            <div class="form-area">
-                form
-                <!--- ******remove this
+
+        
+        <div class="form-area">
+            <p>Let's do this!</p>
+            <form id="sign-up" action="https://httpbin.org/post" method="POST">
                 <div>
                     <label for="first-name">First Name</label>
                     <input type="text" id="first-name" name="first-name">
@@ -44,31 +46,27 @@
                     <label for="phone">Phone number</label>
                     <input type="tel" id="phone" name="user-phone">
                 </div>
-
-                 passwords - implement regex pattern validation? 
-                
+                <!---passwords -->
                 <div>
                     <label for="password">Password</label>
                     <input type="text" id="password" name="pwd">
                 </div>
-                 submit or validate confirmation? 
                 <div>
                     <label for="confirm-password">Confirm Password</label>
                     <input type="text" id="confirm-password" name="confirm-password">
                 </div>
+            </form>
+        </div>
 
-                 passwords-->
-
+        <div class="post-form">
+            <div class="button">
+                <button id="btn-submit" type="submit" form="sign-up">create account</button>
             </div>
-            <!--- ******remove this
-            <div class="button"><button id="btn-submit" type="submit">create account</button></div> 
-            
-        </form>
-        --->
             
             <div class="log-in">
-                already have an account? <a href="">Log in</a>
+                Already have an account? <a href="">Log in</a>
             </div>
+        </div>
     </div>
 </body>
 </html>
