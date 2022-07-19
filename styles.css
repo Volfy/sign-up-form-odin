@@ -25,20 +25,17 @@ body {
 
 /* SIDEBAR STUFF */
 
-/* if screen is too small, logo text will wrap with no background.
-    additionally, it can overlap onto the main section */
-
 .sidebar {
     --sidebar-actual-width: max(calc(var(--sidebar-width)*100vw), var(--sidebar-min-width));
     background-image: url('assets/bg.png');
-    background-position-x: 60%;
-    background-position-y: 70%;
+    background-position: 51%;
+    background-attachment:scroll;
     /* have to have really long monitor */
     background-repeat: no-repeat;
 
     /* limit sidebar size */
     width: var(--sidebar-actual-width); 
-
+    /*height: 100%; */
 }
 
 .logo {
@@ -52,14 +49,13 @@ body {
 
     /* padding and keep items in sidebar */
     box-sizing: border-box;
-    padding: max(50px, 5vw);
+    padding: max(58px, 5.8vw);
     
-    height: calc(var(--text-actual-size));
-    width: 100%;
+    height: calc(var(--text-actual-size)*1.2);
 
     /* position it within sidebar */
     position: relative;
-    top: 20%;
+    top: 25%;
     
     /* add black semi-transparent bg */
     background-color: rgba(0, 0, 0, 0.607);
@@ -72,7 +68,7 @@ body {
 
 .logo-text {
     font-family: 'Horizon';
-    font-size: var(--text-actual-size);
+    font-size: calc(var(--text-actual-size)*0.7);
     color: white;
 }
 
