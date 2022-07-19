@@ -6,8 +6,29 @@
 }
 
 :root {
+
+    /* sidebar stuff */
     --sidebar-min-width: 300px;
     --sidebar-width: 0.37;
+    /** logo stuff */
+    --logo-bg-height-factor: 1.2;
+    --logo-height-width-ratio: 0.2;
+    --logo-text-factor: 0.7;
+    --logo-top: 25%;
+    --logo-padding-factor: 5.8;
+    --logo-gap: 10px;
+    --logo-bg-color: rgba(0, 0, 0, 0.607);
+    --logo-text-color: white;
+
+    /* main stuff */
+    --core-color: purple;
+    --accent-color: pink;
+    /** form stuff */
+    --form-text-color: grey;
+    --form-error-color: red;
+    --form-focus-color: blue;
+    --form-area-bg-color: white;
+    
 }
 html {
     width: 100%;
@@ -27,6 +48,7 @@ body {
 
 .sidebar {
     --sidebar-actual-width: max(calc(var(--sidebar-width)*100vw), var(--sidebar-min-width));
+
     background-image: url('assets/bg.png');
     background-position: 51%;
     background-attachment:scroll;
@@ -39,26 +61,26 @@ body {
 }
 
 .logo {
-    --text-actual-size: calc(var(--sidebar-actual-width)*0.2);
+    --text-actual-size: calc(var(--sidebar-actual-width)*var(--logo-height-width-ratio));
 
     /* space out items and center */
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: var(--logo-gap);
 
     /* padding and keep items in sidebar */
     box-sizing: border-box;
-    padding: max(58px, 5.8vw);
+    padding: max(calc(var(--logo-padding-factor)*10px), calc(var(--logo-padding-factor)*1vw));
     
-    height: calc(var(--text-actual-size)*1.2);
+    height: calc(var(--text-actual-size)*var(--logo-bg-height-factor));
 
     /* position it within sidebar */
     position: relative;
-    top: 25%;
+    top: var(--logo-top);
     
     /* add black semi-transparent bg */
-    background-color: rgba(0, 0, 0, 0.607);
+    background-color: var(--logo-bg-color);
 }
 
 .logo > img {
@@ -68,8 +90,8 @@ body {
 
 .logo-text {
     font-family: 'Horizon';
-    font-size: calc(var(--text-actual-size)*0.7);
-    color: white;
+    font-size: calc(var(--text-actual-size)*var(--logo-text-factor));
+    color: var(--logo-text-color);
 }
 
 /* MAIN CONTENT STUFF 
