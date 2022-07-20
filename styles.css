@@ -158,6 +158,14 @@ body {
     font-weight: 700;
 }
 
+label {
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 500;
+    font-size: 0.90em;
+}
+
 /* Post-FORM area */
 
 .post-form {
