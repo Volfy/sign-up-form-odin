@@ -46,14 +46,14 @@
                     <label for="phone">Phone number</label>
                     <input type="tel" id="phone" name="user-phone">
                 </div>
-                <!---passwords -->
+                <!---passwords uppercase lowercase number/special char min 8-->
                 <div>
                     <label for="password">Password</label>
-                    <input type="text" id="password" name="pwd">
+                    <input type="text" id="password" name="pwd" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
                 </div>
                 <div>
                     <label for="confirm-password">Confirm Password</label>
-                    <input type="text" id="confirm-password" name="confirm-password">
+                    <input type="text" id="confirm-password" name="confirm-password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
                 </div>
             </form>
         </div>
