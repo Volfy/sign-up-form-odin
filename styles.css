@@ -24,13 +24,14 @@
     --core-color: purple;
     --accent-color: pink;
     --neutral-color: lightgrey;
-    --main-padding: 5%;
+    --main-padding: 50px;
     --main-max-width: 1000px;
     --main-width-factor: 0.7;
 
     /** signup info */
-    --signup-top: 20%;
+    --signup-top: 7%;
     /** form stuff */
+    --form-height: 23.5%; 
     --form-text-color: grey;
     --form-error-color: red;
     --form-focus-color: blue;
@@ -120,7 +121,8 @@ body {
     margin-top: min(var(--signup-top), 300px);
     font-size: 1.6em;
     font-weight: 700;
-    padding: var(--main-padding);
+    padding: 22px;
+    padding-left: var(--main-padding);
 }
 
 
@@ -129,7 +131,9 @@ body {
 .form-area {
     width: 100%;
     background-color: var(--form-area-bg-color);
-    padding: var(--main-padding);
+    height: fit-content;
+    padding: 30px;
+    padding-left: var(--main-padding);
     padding-top: 0px;
     box-shadow: 3px 3px 6px #888;
 }
@@ -157,7 +161,8 @@ body {
 /* Post-FORM area */
 
 .post-form {
-    padding: var(--main-padding);
+    padding: 40px;
+    padding-left: var(--main-padding);
     width: var(--inner-width);
 }
 
