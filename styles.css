@@ -303,7 +303,7 @@ input:not(:placeholder-shown):valid+.warning-marker::after {
     color: white;
     font-weight: 700;
 
-    box-shadow: 0px 3px 6px var(--btn-shadow-color);
+    box-shadow: 0px 2px 4px var(--btn-shadow-color);
     border-style: none;
     appearance: none;
 }
@@ -315,7 +315,7 @@ input:not(:placeholder-shown):valid+.warning-marker::after {
 }
 
 .log-in {
-    padding-top: 1em;
+    padding-top: 1.5em;
 }
 
 .post-form a {
