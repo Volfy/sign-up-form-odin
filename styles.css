@@ -34,6 +34,7 @@
     --core-color: #8d4d94;
     --accent-color: pink;
     --shadow-color: #ccc;
+    --btn-shadow-color: #bbb;
     --neutral-color: #FDF6F5;
     --main-padding: 50px;
     --main-max-width: 1100px;
@@ -288,21 +289,39 @@ input:not(:placeholder-shown):valid+.warning-marker::after {
 /* Post-FORM area */
 
 .post-form {
-    padding: 40px;
+    padding: 1.5em;
     padding-left: var(--main-padding);
     width: var(--inner-width);
 }
 
 #btn-submit {
-    width: 140px;
+    width: calc(-1.5em + var(--form-field-width));
     padding: 10px;
     border-radius: 5px;
+
+    background-color: var(--core-color);
     color: white;
     font-weight: 700;
-    box-shadow: 0px 3px 8px #888;
+
+    box-shadow: 0px 3px 6px var(--btn-shadow-color);
     border-style: none;
     appearance: none;
-    background-color: var(--core-color);
+}
+
+#btn-submit:active {
+    color: var(--core-color);
+    background-color: white;
+    border: 1px solid var(--form-border-focus-color);
+}
+
+.log-in {
+    padding-top: 1em;
+}
+
+.post-form a {
+    color: var(--core-color);
+    text-decoration: none;
+    font-weight: 700;
 }
 
 .italic {
