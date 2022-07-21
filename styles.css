@@ -47,16 +47,18 @@
 
     --form-border-unfocused-color: lightgrey;
     --form-border-invalid-color: red;
-    --form-border-focus-color: blue;
+    --form-border-focus-color: var(--core-color);
 
     --form-area-bg-color: white;
 
     --form-spacing: 10px;
-    --form-field-width: 12em;
+    --form-field-width: 16em;
 
     --label-space: 0.05em; 
     --label-weight: 600; 
     --label-size: 0.8em; 
+
+    --form-field-left: 5px;
     
 }
 html {
@@ -211,6 +213,8 @@ body {
     left: calc(-0.5em + var(--form-field-width));
 }
 
+
+
 label {
     color: var(--label-color);
     letter-spacing: var(--label-space);
@@ -234,6 +238,12 @@ button, input {
     outline: none;
 }
 
+input, label {
+    /* makes it look nicer */
+    padding: 2px;
+    padding-left: var(--form-field-left);
+}
+
 input {
     border-style: none;
     border: 1px solid var(--form-border-unfocused-color);
@@ -241,8 +251,8 @@ input {
 }
 
 input:focus {
-    /* not working, appears yellow*/
     border: 1.5px solid var(--form-border-focus-color);
+    box-shadow: 0.3px 0.7px 2px var(--shadow-color);
 }
 
 /* :not(:placeholder-shown) will only activate after user
@@ -263,11 +273,12 @@ input:not(:placeholder-shown):valid+span::after {
     color: var(--core-color);
 }
 
-/* On Focus: Blue
-On invalid: Explain why + red >> 
+
+
+/* On invalid: Explain why:
 pw not match or not pattern
 email not pattern
-tel not pattern */
+(telephone no validation) */
 
 /* Post-FORM area */
 
