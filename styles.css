@@ -139,10 +139,6 @@ body {
     display: flex;
     flex-direction: column;
     align-content: center;
-
-    /* necessary to extend bg at large widths */
-    width: 100%;
-    
 }
 
 .sign-up-info {
@@ -251,12 +247,9 @@ input:focus {
     box-shadow: 0.3px 0.7px 2px var(--shadow-color);
 }
 
-/* :not(:placeholder-shown) will only activate after user
-inputs something */
+/* :not(:placeholder-shown) will only activate after user input */
 input:not(:placeholder-shown):invalid {
-    
     border: 1.5px solid var(--form-border-invalid-color);
-    /* add an icon in the error too */
 }
 
 input:not(:placeholder-shown):invalid+span::after {
@@ -268,8 +261,6 @@ input:not(:placeholder-shown):valid+span::after {
     content: "✔";
     color: var(--core-color);
 }
-
-
 
 /* On invalid: Explain why:
 pw not match or not pattern
