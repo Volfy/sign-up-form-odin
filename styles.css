@@ -183,7 +183,7 @@ body {
     width: var(--inner-width);
 }
 
-#sign-up div {
+.field {
     padding: var(--form-spacing);
     /* prevents more than 2 fields on same row */
     flex: 1 1 40%;
@@ -193,14 +193,13 @@ body {
     
 }
 
-#sign-up div label, #sign-up div input {
+.field label, .field input {
     /* keeps everything on its own line */
     /* particularly for email field */
     display: block;
 } 
 
-#sign-up div .warning-marker {
-
+.warning-marker {
     /* position all post-field markers to the right of fields */
     /* without taking space below */
     position: absolute;
@@ -208,6 +207,8 @@ body {
     top: 2.1em;
     left: calc(-0.5em + var(--form-field-width));
 }
+
+
 
 label {
     color: var(--label-color);
@@ -254,27 +255,24 @@ input:not(:placeholder-shown):invalid {
     border: 1.5px solid var(--form-border-invalid-color);
 }
 
-input:not(:placeholder-shown):invalid+span::after {
+input:not(:placeholder-shown):invalid+.warning-marker::after {
     content: "✖";
     color: var(--form-border-invalid-color);
 }
 
-input:not(:placeholder-shown):valid+span::after {
+input:not(:placeholder-shown):valid+.warning-marker::after {
     content: "✔";
     color: var(--core-color);
 }
 
-/* On invalid: Explain why:
-pw not match or not pattern
-email not pattern
-(telephone no validation) 
-PW NOT MATCH: 
-"Passwords do not match"
-PW NOT PATTERN:
-"Passwords must be 8 characters long and 
-include a lowercase letter, uppercase letter and a number"
-EMAIL NOT PATTERN:
-"Please enter a valid email address"
+.field input:not(:placeholder-shown):invalid ~ .warning-email,
+.field input:not(:placeholder-shown):invalid ~ .warning-pwd-invalid {
+   display: block;
+   position: relative;
+   color: var(--form-border-invalid-color);
+}
+/* 
+PW not match >> javascript
 */
 
 /* Post-FORM area */
