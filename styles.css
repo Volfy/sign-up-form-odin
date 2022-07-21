@@ -10,7 +10,7 @@
     /* sidebar stuff */
     --sidebar-min-width: 300px;
     --sidebar-width: 0.37;
-    --sidebar-max-width: 600px;
+    --sidebar-max-width: 500px;
     --sidebar-actual-width: min(var(--sidebar-max-width), max(calc(var(--sidebar-width)*100vw), var(--sidebar-min-width)));
 
     /** logo stuff */
@@ -24,11 +24,10 @@
     --logo-text-color: white;
 
     /* main stuff */
-    --core-color: #8d4d94;
-    --accent-color: pink;
+    --core-color: #7eb4a5;
     --shadow-color: #ccc;
     --btn-shadow-color: #bbb;
-    --neutral-color: #FDF6F5;
+    --neutral-color: #F7F3F5;
     --main-padding: 50px;
     --main-max-width: 1100px;
     --main-width-factor: 0.9;
@@ -42,9 +41,9 @@
     --form-height: 23.5%; 
     --label-color: #333;
 
-    --form-border-unfocused-color: lightgrey;
-    --form-border-invalid-color: red;
-    --form-border-focus-color: var(--core-color);
+    --form-border-unfocused-color: #747d8b;
+    --form-border-invalid-color: #d6004e;
+    --form-border-focus-color: #8a7bb9;
 
     --form-area-bg-color: white;
 
@@ -78,8 +77,8 @@ body {
 .sidebar {
     
 
-    background-image: url('assets/bg.png');
-    background-position: 51%;
+    background-image: url('assets/bg6.png');
+    background-position: 50%;
     background-attachment:scroll;
     /* have to have really long monitor */
     background-repeat: no-repeat;
