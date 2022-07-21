@@ -207,6 +207,10 @@ body {
     left: calc(-1.3em + var(--form-field-width));
 }
 
+.warning-email, .warning-pwd-invalid, .warning-pwd-nomatch {
+    font-size: 0.9em;
+}
+
 label {
     color: var(--label-color);
     letter-spacing: var(--label-space);
@@ -298,6 +302,7 @@ input:not(:placeholder-shown):valid+.warning-marker::after {
 
     background-color: var(--core-color);
     color: white;
+    font-size: 1.1em;
     font-weight: 700;
 
     box-shadow: 0px 2px 4px var(--btn-shadow-color);
@@ -313,6 +318,7 @@ input:not(:placeholder-shown):valid+.warning-marker::after {
 
 .log-in {
     padding-top: 1.5em;
+    font-size: 1.1em;
 }
 
 .post-form a {
