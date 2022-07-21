@@ -277,7 +277,7 @@ input:not(:placeholder-shown):valid+.warning-marker::after {
    color: var(--form-border-invalid-color);
 }
 
-.warning-pwd-invalid::before, .warning-pwd-nomatch::before {
+.warning-email::before, .warning-pwd-invalid::before, .warning-pwd-nomatch::before {
     content:'* ';
  }
 
