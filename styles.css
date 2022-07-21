@@ -18,6 +18,7 @@
     --sidebar-min-width: 300px;
     --sidebar-width: 0.37;
     --sidebar-max-width: 600px;
+    --sidebar-actual-width: min(var(--sidebar-max-width), max(calc(var(--sidebar-width)*100vw), var(--sidebar-min-width)));
 
     /** logo stuff */
     --logo-bg-height-factor: 1.2;
@@ -35,10 +36,10 @@
     --shadow-color: #ccc;
     --neutral-color: #FDF6F5;
     --main-padding: 50px;
-    --main-max-width: 1000px;
-    --main-width-factor: 0.7;
+    --main-max-width: 1100px;
+    --main-width-factor: 0.9;
 
-    --large-font-size: 1.4em;
+    --large-font-size: 1.3em;
 
     /** signup info */
     --signup-top: 7%;
@@ -54,7 +55,7 @@
     --form-area-bg-color: white;
 
     --form-spacing: 10px;
-    --form-field-width: 16em;
+    --form-field-width: 14em;
 
     --label-space: 0.05em; 
     --label-weight: 600; 
@@ -81,7 +82,7 @@ body {
 /* SIDEBAR STUFF */
 
 .sidebar {
-    --sidebar-actual-width: min(var(--sidebar-max-width), max(calc(var(--sidebar-width)*100vw), var(--sidebar-min-width)));
+    
 
     background-image: url('assets/bg.png');
     background-position: 51%;
@@ -133,7 +134,7 @@ body {
 
 .container {
     /* consistent width on big screens */
-    --inner-width: calc(min(var(--main-max-width), 100%)*var(--main-width-factor));
+    --inner-width: calc(var(--main-width-factor)*min(var(--main-max-width), 100%));
     
     background-color: var(--neutral-color);
 
@@ -144,7 +145,7 @@ body {
 }
 
 .sign-up-info {
-    width: var(--inner-width);
+    width: calc(var(--inner-width)*0.8);
     /* slightly responsive */
     margin-top: var(--signup-top);
     
