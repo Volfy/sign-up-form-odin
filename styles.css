@@ -6,13 +6,6 @@
 }
 
 :root {
-    /* ISSUES
-    *   on very small width, bgimg & neutral bg do not extend down
-    *      when form is collapsed.
-    *   
-    *
-    *         */
-
 
     /* sidebar stuff */
     --sidebar-min-width: 300px;
@@ -66,14 +59,14 @@
     
 }
 html {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 }
 
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    width: 100%;
-    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
     display: flex;
     flex-direction: row;
     margin: 0;
