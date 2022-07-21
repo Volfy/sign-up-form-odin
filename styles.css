@@ -17,6 +17,7 @@
     /* sidebar stuff */
     --sidebar-min-width: 300px;
     --sidebar-width: 0.37;
+    --sidebar-max-width: 600px;
 
     /** logo stuff */
     --logo-bg-height-factor: 1.2;
@@ -76,7 +77,7 @@ body {
 /* SIDEBAR STUFF */
 
 .sidebar {
-    --sidebar-actual-width: max(calc(var(--sidebar-width)*100vw), var(--sidebar-min-width));
+    --sidebar-actual-width: min(var(--sidebar-max-width), max(calc(var(--sidebar-width)*100vw), var(--sidebar-min-width)));
 
     background-image: url('assets/bg.png');
     background-position: 51%;
@@ -187,14 +188,27 @@ body {
     padding: var(--form-spacing);
     /* prevents more than 2 fields on same row */
     flex: 1 1 40%;
+
+    /*necessary for spans absolute pos, the markers */
+    position: relative;
     
 }
 
-#sign-up div * {
+#sign-up div label, #sign-up div input {
     /* keeps everything on its own line */
     /* particularly for email field */
     display: block;
 } 
+
+#sign-up div span {
+
+    /* position all post-field markers to the right of fields */
+    /* without taking space below */
+    position: absolute;
+    display: inline;
+    top: 1.7em;
+    left: calc(-0.5em + var(--form-field-width));
+}
 
 label {
     color: var(--label-color);
@@ -215,6 +229,8 @@ button, input {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+
+    outline: none;
 }
 
 input {
@@ -225,17 +241,25 @@ input {
 
 input:focus {
     /* not working, appears yellow*/
-    border: 2px solid var(--form-border-focus-color);
+    border: 1.5px solid var(--form-border-focus-color);
 }
 
-input:invalid {
+/* :not(:placeholder-shown) will only activate after user
+inputs something */
+input:not(:placeholder-shown):invalid {
     
-    border: 2px solid var(--form-border-invalid-color);
+    border: 1.5px solid var(--form-border-invalid-color);
     /* add an icon in the error too */
 }
 
-input:valid::after {
-    text
+input:not(:placeholder-shown):invalid+span::after {
+    content: "✖";
+    color: var(--form-border-invalid-color);
+}
+
+input:not(:placeholder-shown):valid+span::after {
+    content: "✔";
+    color: var(--core-color);
 }
 
 /* On Focus: Blue
