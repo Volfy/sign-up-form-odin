@@ -6,10 +6,18 @@
 }
 
 :root {
+    /* ISSUES
+    *   on very small width, bgimg & neutral bg do not extend down
+    *      when form is collapsed.
+    *
+    *
+    *         */
+
 
     /* sidebar stuff */
     --sidebar-min-width: 300px;
     --sidebar-width: 0.37;
+
     /** logo stuff */
     --logo-bg-height-factor: 1.2;
     --logo-height-width-ratio: 0.2;
@@ -23,6 +31,7 @@
     /* main stuff */
     --core-color: #8d4d94;
     --accent-color: pink;
+    --shadow-color: #888;
     --neutral-color: #FDF6F5;
     --main-padding: 50px;
     --main-max-width: 1000px;
@@ -30,12 +39,23 @@
 
     /** signup info */
     --signup-top: 7%;
+
     /** form stuff */
     --form-height: 23.5%; 
-    --form-text-color: grey;
-    --form-error-color: red;
-    --form-focus-color: blue;
+    --label-color: #333;
+
+    --form-border-unfocused-color: lightgrey;
+    --form-border-invalid-color: red;
+    --form-border-focus-color: blue;
+
     --form-area-bg-color: white;
+
+    --form-spacing: 10px;
+    --form-field-width: 12em;
+
+    --label-space: 0.05em; 
+    --label-weight: 600; 
+    --label-size: 0.8em; 
     
 }
 html {
@@ -70,6 +90,7 @@ body {
 }
 
 .logo {
+    /* height of img and text size depends on sidebar width */
     --text-actual-size: calc(var(--sidebar-actual-width)*var(--logo-height-width-ratio));
 
     /* space out items and center */
@@ -106,23 +127,30 @@ body {
 /* MAIN CONTENT STUFF */
 
 .container {
+    /* consistent width on big screens */
     --inner-width: calc(min(var(--main-max-width), 100%)*var(--main-width-factor));
+    
+    background-color: var(--neutral-color);
+
+    /* organize items */
     display: flex;
     flex-direction: column;
     align-content: center;
-    box-sizing: border-box;
-    padding: 0;
+
+    /* necessary to extend bg at large widths */
     width: 100%;
-    background-color: var(--neutral-color);
 }
 
 .sign-up-info {
     width: var(--inner-width);
-    margin-top: min(var(--signup-top), 300px);
-    font-size: 1.6em;
-    font-weight: 700;
+    /* slightly responsive */
+    margin-top: var(--signup-top);
+    
     padding: 22px;
     padding-left: var(--main-padding);
+
+    font-size: 1.6em;
+    font-weight: 700;
 }
 
 
@@ -132,11 +160,22 @@ body {
     width: 100%;
     background-color: var(--form-area-bg-color);
     height: fit-content;
-    padding: 30px;
+    
+    /* _ xpx _ _ makes it appear on both top and btm */
+    box-shadow: 3px 2px 6px var(--shadow-color);
+
+    padding: 22px;
     padding-left: var(--main-padding);
     padding-top: 0px;
-    box-shadow: 3px 3px 6px #888;
 }
+
+/* text above form */
+.form-area > p {
+    font-size: 1.4em;
+    font-weight: 700;
+}
+
+/* FORM ITSELF */
 
 #sign-up {
     display: flex;
@@ -145,26 +184,65 @@ body {
 }
 
 #sign-up div {
-    flex: 1 1 42%;
-    padding: 5px;
+    padding: var(--form-spacing);
+    /* prevents more than 2 fields on same row */
+    flex: 1 1 40%;
+    
 }
 
 #sign-up div * {
+    /* keeps everything on its own line */
+    /* particularly for email field */
     display: block;
 } 
 
-.form-area > p {
-    font-size: 1.4em;
-    font-weight: 700;
+label {
+    color: var(--label-color);
+    letter-spacing: var(--label-space);
+    font-weight: var(--label-weight);
+    font-size: var(--label-size);
+    /* i figure this makes the html look less weird */
+    text-transform: uppercase;
 }
 
-label {
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    font-weight: 500;
-    font-size: 0.90em;
+button, input {
+    /* consistency across items */
+
+    font-family: inherit;
+    font-size: 100%;
+
+    width: var(--form-field-width);
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
+
+input {
+    border-style: none;
+    border: 1px solid var(--form-border-unfocused-color);
+    border-radius: 4px;
+}
+
+input:focus {
+    /* not working, appears yellow*/
+    border: 2px solid var(--form-border-focus-color);
+}
+
+input:invalid {
+    
+    border: 2px solid var(--form-border-invalid-color);
+    /* add an icon in the error too */
+}
+
+input:valid::after {
+    text
+}
+
+/* On Focus: Blue
+On invalid: Explain why + red >> 
+pw not match or not pattern
+email not pattern
+tel not pattern */
 
 /* Post-FORM area */
 
