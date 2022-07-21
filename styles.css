@@ -161,11 +161,9 @@ body {
 /* FORM AREA */
 
 .form-area {
-    width: 100%;
     background-color: var(--form-area-bg-color);
-    height: fit-content;
     
-    /* _ xpx _ _ makes it appear on both top and btm */
+    /* off-x off-y blur (spread) color*/
     box-shadow: 3px 2px 6px var(--shadow-color);
 
     padding: 22px;
@@ -209,11 +207,9 @@ body {
     /* without taking space below */
     position: absolute;
     display: inline;
-    top: 1.7em;
+    top: 2.1em;
     left: calc(-0.5em + var(--form-field-width));
 }
-
-
 
 label {
     color: var(--label-color);
