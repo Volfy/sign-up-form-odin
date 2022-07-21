@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-up Form</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="main.js" defer></script>
+    <script src="main.js"></script>
 </head>
 <body>
 
@@ -31,17 +31,17 @@
         <div class="form-area">
             <p>Let's do this!</p>
             <form id="sign-up" action="https://httpbin.org/post" method="POST">
-                <div class="field">
+                <div class="field req">
                     <label for="first-name">First Name</label>
                     <input type="text" id="first-name" name="first-name" placeholder="Ames" required>
                     <span class="warning-marker"></span>
                 </div>
-                <div class="field">
+                <div class="field req">
                     <label for="last-name">Last Name</label>
                     <input type="text" id="last-name" name="last-name" placeholder="Turie" required>
                     <span class="warning-marker"></span>
                 </div>
-                <div class="field">
+                <div class="field req">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="user-email" placeholder="example@email.com" required>
                     <span class="warning-marker"></span>
@@ -53,14 +53,14 @@
                     <span class="warning-marker"></span>
                 </div class="field">
                 <!---passwords uppercase lowercase number/special char min 8-->
-                <div class="field">
+                <div class="field req">
                     <label for="password">Password</label>
                     <input type="password" id="password" name="user-password" placeholder="" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
                     <span class="warning-marker"></span>
                     <span hidden class="warning-pwd-invalid">Passwords must be 8 characters long and include a lowercase letter, uppercase letter and a number</span>
                     <span hidden class="warning-pwd-nomatch">Passwords do not match</span>
                 </div>
-                <div class="field">
+                <div class="field req">
                     <label for="confirm-password">Confirm Password</label>
                     <input type="password" id="confirm-password" name="confirm-password" placeholder="" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
                     <span class="warning-marker"></span>

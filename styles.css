@@ -208,8 +208,6 @@ body {
     left: calc(-0.5em + var(--form-field-width));
 }
 
-
-
 label {
     color: var(--label-color);
     letter-spacing: var(--label-space);
@@ -237,6 +235,10 @@ input, label {
     /* makes it look nicer */
     padding: 2px;
     padding-left: var(--form-field-left);
+}
+
+.req > label::after {
+    content: '*'
 }
 
 input {
