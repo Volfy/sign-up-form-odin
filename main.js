@@ -1,14 +1,13 @@
 // validate that password and confirm password match before submitting
 
 const warnings = document.querySelectorAll('.warning-pwd-nomatch');
-const warning_invalid = document.querySelector('.warning-pwd-invalid')
 const password = document.querySelector("#password");
 const confirm_password = document.querySelector("#confirm-password");
 
 function check () {
     if (password.value != confirm_password.value) {
         warnings.forEach(item => item.style.cssText ="display: block;")
-    }else {
+    } else {
         warnings.forEach(item => item.style.cssText ="visibility: hidden;")
     }}
 // will display even if user has not finished entering a password, which is annoying
