@@ -284,10 +284,6 @@ input:not(:placeholder-shown):valid+.warning-marker::after {
     color: var(--form-border-invalid-color);
  }
 
-/* 
-PW not match >> javascript
-*/
-
 /* Post-FORM area */
 
 .post-form {
