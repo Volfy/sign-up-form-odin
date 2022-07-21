@@ -9,7 +9,7 @@
     /* ISSUES
     *   on very small width, bgimg & neutral bg do not extend down
     *      when form is collapsed.
-    *
+    *   neither does width change...
     *
     *         */
 
@@ -140,6 +140,7 @@ body {
 
     /* necessary to extend bg at large widths */
     width: 100%;
+    
 }
 
 .sign-up-info {
