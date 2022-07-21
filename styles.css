@@ -199,7 +199,7 @@ body {
     display: block;
 } 
 
-#sign-up div span {
+#sign-up div .warning-marker {
 
     /* position all post-field markers to the right of fields */
     /* without taking space below */
@@ -267,7 +267,15 @@ input:not(:placeholder-shown):valid+span::after {
 /* On invalid: Explain why:
 pw not match or not pattern
 email not pattern
-(telephone no validation) */
+(telephone no validation) 
+PW NOT MATCH: 
+"Passwords do not match"
+PW NOT PATTERN:
+"Passwords must be 8 characters long and 
+include a lowercase letter, uppercase letter and a number"
+EMAIL NOT PATTERN:
+"Please enter a valid email address"
+*/
 
 /* Post-FORM area */
 
