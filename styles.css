@@ -271,6 +271,17 @@ input:not(:placeholder-shown):valid+.warning-marker::after {
    position: relative;
    color: var(--form-border-invalid-color);
 }
+
+.warning-pwd-invalid::before, .warning-pwd-nomatch::before {
+    content:'* ';
+ }
+
+/* visibility handled by JS */
+.warning-pwd-nomatch {
+    position: relative;
+    color: var(--form-border-invalid-color);
+ }
+
 /* 
 PW not match >> javascript
 */

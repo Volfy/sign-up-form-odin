@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-up Form</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
 
@@ -57,13 +58,13 @@
                     <input type="password" id="password" name="user-password" placeholder="" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
                     <span class="warning-marker"></span>
                     <span hidden class="warning-pwd-invalid">Passwords must be 8 characters long and include a lowercase letter, uppercase letter and a number</span>
-                    <!---<span class="warning-pwd-nomatch">Passwords do not match</span>--->
+                    <span hidden class="warning-pwd-nomatch">Passwords do not match</span>
                 </div>
                 <div class="field">
                     <label for="confirm-password">Confirm Password</label>
                     <input type="password" id="confirm-password" name="confirm-password" placeholder="" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
                     <span class="warning-marker"></span>
-                    <!---<span class="warning-pwd-nomatch">Passwords do not match</span>--->
+                    <span hidden class="warning-pwd-nomatch">Passwords do not match</span>
                 </div>
             </form>
         </div>
