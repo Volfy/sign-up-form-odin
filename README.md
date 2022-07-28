@@ -1,10 +1,10 @@
 # Sign-Up Form (Odin)
 
-![Screenshot](screenshot.png)
-
 A sign-up form made in HTML & CSS for The Odin Project. <a href="https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-sign-up-form">Assignment link</a>
 
 Live deployment available <a href="https://volfy.github.io/sign-up-form-odin/">here</a>.
+
+![Screenshot](screenshot.png)
 
 Note that the confirm password functionality will show an error when passwords do not match, but if both entered values fit the pattern, it'll still submit the form.
 I'd fix this but I'd rather move on for now.
