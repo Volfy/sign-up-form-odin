@@ -1,6 +1,6 @@
-# Sign-Up Form (Odin)
+# Sign-Up Form 
 
-A sign-up form made in HTML & CSS for The Odin Project. <a href="https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-sign-up-form">Assignment link</a>
+A sign-up form made in HTML & CSS for The Odin Project. Assignment link <a href="https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-sign-up-form">here</a>.
 
 Live deployment available <a href="https://volfy.github.io/sign-up-form-odin/">here</a>.
 
